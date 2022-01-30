@@ -1,24 +1,38 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import "./css/List.css"
+import "./css/Button.css";
+import "./css/Cart.css"
+import ListDemo from './Components/List/ListDemo';
+import ProductListDemo from './Components/ProductList/ProductListDemo';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import ProductDetails from './Components/ProductDetails/ProductDetails';
+import AllProvider from './Context/AllProvider/AllProvider';
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AllProvider>
+      <div className="App">
+        <Router>
+          <Switch>
+            <Route path="/product-details">
+              <ProductDetails></ProductDetails>
+            </Route>
+            <Route exact path="/">
+              {/* <ListDemo></ListDemo> */}
+              <ProductListDemo></ProductListDemo>
+            </Route>
+          </Switch>
+        </Router>
+      </div>
+    </AllProvider>
   );
 }
 

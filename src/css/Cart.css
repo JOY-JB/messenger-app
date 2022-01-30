@@ -1,0 +1,115 @@
+.product-item{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #808080;;
+}
+
+.product-image{
+    display: inline-block;
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: 50%;
+    padding: 0px 2px;
+    margin: 5px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.product-body{
+    padding: 0px 2px;
+    display: flex;
+    flex-grow: 100;
+    flex-direction: column;
+}
+.product-title{
+    font-size: 1.20rem;
+    font-weight: 600;
+    margin: 2px;
+}
+.product-ratings{
+    font-size: 0.75rem;
+    margin: 2px;
+}
+.total-reviewer{
+    margin-left: 5px;
+    color: #807f7f;
+}
+.rating-icon{
+    color: #FDB245;
+}
+.product-description{
+    color: #808080;
+    margin: 2px;
+}
+.product-price{
+    margin: 2px;
+    font-size: 0.75rem;
+    color: #808080;
+}
+.product-distance{
+    margin: 2px;
+    font-size: 0.75rem;
+    color: #808080;
+}
+.product-send-button{
+    padding: 0px 5px 5px 5px;
+    margin-bottom: 5px;
+}
+
+.product-details-image{
+    width: 100%;
+    height: auto;
+}
+.product-details-action{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 5px;
+}
+.product-details-action-btn{
+    background-color: transparent;
+    border: 0;
+    font-size: 1.75rem;
+    color: #0074E0;
+    font-weight: 500;
+}
+.product-details-action-qunatity{
+    margin: 0px 10px;
+}
+.product-details{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.product-details-body{
+    padding: 20px 2px;
+    display: flex;
+    margin-top: 1rem;
+    flex-grow: 100;
+    flex-direction: column;
+}
+.product-details-title{
+    font-size: 1.20rem;
+    font-weight: 600;
+    margin: 2px;
+}
+.product-details-description{
+    color: #808080;
+    margin: 2px;
+}
+.rating-star{
+    color: rgb(245 158 11);
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.quantityAction{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}

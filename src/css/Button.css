@@ -1,0 +1,76 @@
+
+/* main button */
+.button{
+  font-size: 1rem;
+  display: inline-block;
+  text-align: center;
+
+  -moz-user-select: none;  
+  -webkit-user-select: none;  
+  -ms-user-select: none;  
+  -o-user-select: none;  
+  user-select: none;
+}
+.button-icon{
+  display: inline-block;
+  margin: 0px 2px;
+}
+.button-message{
+  display: inline-block;
+  margin: 0px 2px;
+}
+
+/* button variant */
+.variant-primary{
+  background-color: #0084FF;
+  color: white;
+}
+
+.variant-secondary{
+  background-color: white;
+  color: #0084FF;
+}
+
+/* button press */
+.primary-button-press{
+  background-color: #0074E0;
+  color: #E0E0E0;
+}
+.secondary-button-press{
+  background-color: #E0E0E0;
+  color: #0074E0;
+}
+
+/* button type */
+.type-button{
+  padding: 0.4rem;
+  border-radius: 0.3rem;
+}
+.type-icon{
+  background-color: transparent !important;
+}
+.type-circular{
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+.type-bottom-button{
+  width: 100%;
+  padding:  0.4rem 0rem;
+  border-radius: 0.3rem;
+}
+
+/* button size */
+.button-small{
+font-size: 0.5rem; 
+}
+.button-medium{
+  font-size: 1rem;
+}
+.button-large{
+  font-size: 1.5rem;
+}
+/* button disabled */
+.button-disabled{
+  background-color: #F0F0F0;
+  color: #C0C0C0;
+}
