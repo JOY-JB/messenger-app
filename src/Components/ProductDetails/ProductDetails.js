@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from "react-router-dom"
 import AllStateContext from '../../Context/AllStateContext/AllStateContext';
 import Button from '../Button/Button';
 
 const ProductDetails = () => {
-    // const [quantity, setQuantity] = useState(1);
     const { productQuantity, setProductQuantity } = AllStateContext();
-
+    const [productData, setProductData] = useState({});
+    const { id } = useParams();
 
     const image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2hsTK4k8xjJx5QGk5jfZi8URo4w05bacotw&usqp=CAU";
+
+    useEffect(() => {
+        fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+            .then(res => res.json())
+            .then(data => setProductData(data));
+    }, [])
 
     const handlePlus = () => {
         const newqty = productQuantity + 1;
@@ -36,8 +43,8 @@ const ProductDetails = () => {
             <div>
                 <div>
                     <div className='product-details-body'>
-                        <p className="product-details-title">Domestic Theatre</p>
-                        <p className="product-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta obcaecati amet veritatis earum eveniet dolorum praesentium eligendi perspiciatis tenetur consequatur.</p>
+                        <p className="product-details-title">{productData?.name}</p>
+                        <p className="product-description">{productData?.company?.bs}</p>
                     </div>
                 </div>
 

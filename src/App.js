@@ -22,7 +22,7 @@ function App() {
       <div className="App">
         <Router>
           <Switch>
-            <Route path="/product-details">
+            <Route path="/product-details/:id">
               <ProductDetails></ProductDetails>
             </Route>
             <Route exact path="/">
