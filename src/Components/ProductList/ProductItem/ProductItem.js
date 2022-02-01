@@ -1,26 +1,47 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import AllStateContext from '../../../Context/AllStateContext/AllStateContext';
 import Button from '../../Button/Button';
 
 const ProductItem = ({ image, title, description, rating, price, distance, id }) => {
+    const [productQuantity, setProductQuantity] = useState({ id: 0, quantity: 0 });
     const { star, reviewer } = rating;
-    const { productQuantity, setProductQuantity } = AllStateContext();
+    const { totalQuantity, setTotalQuantity } = AllStateContext();
 
-    // setProductQuantity([...productQuantity, { id: `${id}`, quantity: 1 }])
 
-    const handlePlus = () => {
-        let newqty = productQuantity.filter(product => product.id === id)
-        console.log(newqty);
-        // [{ id: `$id`, quantity: newqty }]
-        // setProductQuantity((prev)=> [...prev,newqty])
-        // setProductQuantity(newqty)
-    }
-    const handleminus = () => {
-        if (productQuantity > 1) {
-            const newqty = productQuantity - 1;
-            setProductQuantity(newqty);
+    const handlePlus = (id) => {
+
+        // const newQty = productQuantity.quantity + 1
+        // setProductQuantity({ id: id, quantity: newQty });
+
+        // const newProductdetails = [...totalQuantity, productQuantity]
+        // setTotalQuantity(newProductdetails);
+        // console.log(totalQuantity);
+
+        const exist = totalQuantity.find(product => product?.id === id);
+        console.log(exist);
+        let newTotalQuantity = [];
+        if (exist) {
+            const rest = totalQuantity.filter(pd => pd?.id !== id);
+            console.log(rest);
+            const newQty = exist.quantity + 1;
+            newTotalQuantity = [...rest, { id: id, quantity: newQty }];
         }
+        else {
+            const newQty = productQuantity.quantity + 1;
+            newTotalQuantity = [...totalQuantity, { id: id, quantity: newQty }];
+        }
+
+        setTotalQuantity(newTotalQuantity);
+    }
+    const handleMinus = (id) => {
+        // if (productQuantity > 1) {
+        //     const newQty = productQuantity.quantity + 1
+        //     setProductQuantity({ id: id, quantity: newQty });
+
+        // }
+
+        console.log(totalQuantity);
     }
 
 
@@ -51,9 +72,9 @@ const ProductItem = ({ image, title, description, rating, price, distance, id })
             </div>
 
             <div className="quantityAction">
-                <button onClick={handleminus} className="product-details-action-btn">&#8722;</button>
+                <button onClick={() => handleMinus(id)} className="product-details-action-btn">&#8722;</button>
                 <span className='product-details-action-qunatity'>0</span>
-                <button onClick={handlePlus} className="product-details-action-btn">&#43;</button>
+                <button onClick={() => handlePlus(id)} className="product-details-action-btn">&#43;</button>
             </div>
 
             <div className='product-action'>
